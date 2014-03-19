@@ -3,6 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="239*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Height="27" Width="497" IsSnapToTickEnabled="True" Maximum="1" LargeChange="0.1" TickFrequency="0.0001" Grid.Row="1"/>
+        <Grid HorizontalAlignment="Center" Height="37" VerticalAlignment="Bottom" Width="127" Margin="216,0,174,40" Grid.Row="1">
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=slider, StringFormat=\{0:P\}}" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,10,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="67"><Run Language="de-de" Text="von C"/></TextBlock>
+        </Grid>
+
     </Grid>
 </Window>
