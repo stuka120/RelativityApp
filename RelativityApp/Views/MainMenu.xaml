@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="RelativityApp.Views.MainMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="525">
+    <Grid x:Name="MainGrid">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="ButtonLorentzContraction" Content="LorentzContraction" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Height="45" Margin="188,35,179,10" Click="ButtonLorentzContraction_Click" />
+        </Grid>
+    </Grid>
+</UserControl>
