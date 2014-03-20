@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,55 @@ namespace RelativityApp
         public MainWindow()
         {
             InitializeComponent();
+            drawMainDots();
+        }
+
+        public void drawMainDots()
+        {
+            double gamma = 1/Math.Sqrt(1 - Math.Pow(Slider.Value, 2));
+            CanvasS.Children.Clear();
+            for (int x = 10; x < 200; x += 20)
+            {
+                for (int y = 10; y < /*Convert.ToInt32(Math.Round(Height*(239d/(80d + 239d))))*/ 200 ; y += 20)
+                {
+                    double xprime = gamma*(-1*Slider.Value*y + x);
+                    double yprime = gamma*(y - Slider.Value*x);
+
+                    CanvasS.Children.Add(new Line()
+                    {
+                        
+                        X1 = xprime,
+                        Y1 = yprime,
+                        X2 = xprime+2,
+                        Y2 = yprime+2,
+                        StrokeThickness = 2d,
+                        Stroke = new SolidColorBrush(Colors.Black)
+                    });
+                }
+                if (x == 110)
+                {
+                    CanvasS.Children.Add(new Line()
+                    {
+                        X1 = gamma*(-1*Slider.Value*110 + 10),
+                        Y1 = gamma*(110 - Slider.Value*10),
+                        X2 = gamma*(-1*Slider.Value*110 + 190),
+                        Y2 = gamma*(110 - Slider.Value*190),
+                        StrokeThickness = 4,
+                        Stroke = new SolidColorBrush(Colors.Blue)
+                    });
+                }
+            }
+
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            drawMainDots();
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            drawMainDots();
         }
     }
 }
