@@ -10,7 +10,7 @@
             <RowDefinition Height="239*"/>
             <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
-        <Slider x:Name="Slider" HorizontalAlignment="Center" Margin="10,43,0,0" VerticalAlignment="Top" Height="27" Width="400" IsSnapToTickEnabled="True" Maximum="1" LargeChange="0.1" TickFrequency="0.0001" Grid.Row="1" ValueChanged="Slider_ValueChanged"/>
+        <Slider x:Name="Slider" HorizontalAlignment="Center" Margin="10,43,0,0" VerticalAlignment="Top" Height="27" Width="400" IsSnapToTickEnabled="True" Maximum="0.9999999999999999" LargeChange="0.1" TickFrequency="0.0001" Grid.Row="1" ValueChanged="Slider_ValueChanged"/>
         <Grid HorizontalAlignment="Center" Height="37" VerticalAlignment="Bottom" Width="127" Margin="216,0,174,40" Grid.Row="1">
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Value, ElementName=Slider, StringFormat=\{0:P\}}" VerticalAlignment="Top" Margin="10,12,0,0"/>
             <TextBlock HorizontalAlignment="Right" Margin="0,10,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="67"><Run Language="de-de" Text="von C"/></TextBlock>
